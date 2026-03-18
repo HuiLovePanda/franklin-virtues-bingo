@@ -153,8 +153,7 @@ h1 {
 
 .control-summary {
   flex: 1;
-  display: grid;
-  gap: 10px;
+  min-width: 0;
 }
 
 .summary-chip {
@@ -183,6 +182,7 @@ h1 {
   gap: 10px;
   margin-top: 16px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .size-btn,
@@ -596,35 +596,122 @@ textarea {
   }
 
   .top-row {
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
   }
 
   .progress-block {
-    display: flex;
+    flex: 0 0 auto;
+  }
+
+  .progress-ring {
+    width: 72px;
+    height: 72px;
+  }
+
+  .progress-label strong {
+    font-size: 18px;
+  }
+
+  .progress-label span {
+    font-size: 10px;
+  }
+
+  .control-summary {
+    flex: 1;
+  }
+
+  .summary-chip {
+    min-height: 72px;
+    padding: 10px 14px;
+  }
+
+  .summary-chip strong {
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .summary-chip span {
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .size-row {
     justify-content: center;
+    margin-top: 12px;
+  }
+
+  .size-btn {
+    min-width: 82px;
+    padding: 10px 12px;
   }
 
   .tile {
-    min-height: 82px;
-    padding: 10px;
+    min-height: 74px;
+    padding: 8px 7px;
+    border-radius: 18px;
   }
 
   .tile-label {
-    font-size: 14px;
+    font-size: 13px;
+    line-height: 1.28;
+    letter-spacing: -0.01em;
   }
 
   .bottom-actions {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
   }
 
   .task-menu {
     width: 100%;
   }
 
+  .action-btn {
+    min-height: 46px;
+    padding: 0 8px;
+    font-size: 14px;
+    gap: 6px;
+  }
+
+  .btn-icon {
+    width: 18px;
+    height: 18px;
+    font-size: 11px;
+  }
+
   .wizard-steps,
   .choice-grid,
   .virtue-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .board-wrap {
+    padding: 10px;
+  }
+
+  .board {
+    gap: 8px;
+  }
+
+  .board[style*="repeat(4"] .tile,
+  .board[style*="repeat(5"] .tile {
+    min-height: 68px;
+    padding: 7px 6px;
+  }
+
+  .board[style*="repeat(4"] .tile-label,
+  .board[style*="repeat(5"] .tile-label {
+    font-size: 12px;
+    line-height: 1.24;
+  }
+
+  .tile.completed::after {
+    top: 8px;
+    right: 9px;
+    font-size: 14px;
   }
 }
