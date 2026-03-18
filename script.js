@@ -289,6 +289,20 @@ function getBestLineCount() {
     best = Math.max(best, count);
   }
 
+  let diagonalDownCount = 0;
+  for (let i = 0; i < size; i += 1) {
+    const index = i * size + i;
+    if (state.completed.has(state.tasks[index].id)) diagonalDownCount += 1;
+  }
+  best = Math.max(best, diagonalDownCount);
+
+  let diagonalUpCount = 0;
+  for (let i = 0; i < size; i += 1) {
+    const index = i * size + (size - 1 - i);
+    if (state.completed.has(state.tasks[index].id)) diagonalUpCount += 1;
+  }
+  best = Math.max(best, diagonalUpCount);
+
   return best;
 }
 
