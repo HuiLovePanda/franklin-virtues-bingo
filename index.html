@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>富兰克林十三美德BINGO</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero-card">
+        <p class="eyebrow">Benjamin Franklin Virtues Game</p>
+        <h1>富兰克林十三美德BINGO</h1>
+        <p class="slogan">turn your virtues into a game</p>
+      </header>
+
+      <main class="game-panel">
+        <section class="toolbar-panel">
+          <div class="top-row">
+            <div class="progress-block">
+              <div class="progress-ring" aria-label="完成进度">
+                <svg viewBox="0 0 120 120">
+                  <circle class="track" cx="60" cy="60" r="50"></circle>
+                  <circle class="bar" cx="60" cy="60" r="50"></circle>
+                </svg>
+                <div class="progress-label">
+                  <strong id="progressPercent">0%</strong>
+                  <span id="progressMeta">0 / 16</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="control-summary">
+              <div class="summary-chip">
+                <strong>当前任务</strong>
+                <span id="modeLabel">简单任务</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="size-row" id="sizeOptions" aria-label="格子大小"></div>
+        </section>
+
+        <section class="board-wrap">
+          <div class="board" id="board" aria-live="polite"></div>
+        </section>
+
+        <section class="bottom-actions">
+          <div class="task-menu-wrap">
+            <button class="action-btn" id="taskManagerBtn" type="button">
+              <span class="btn-icon" aria-hidden="true">✎</span>
+              <span>任务管理</span>
+            </button>
+            <div class="task-menu hidden" id="taskMenu">
+              <button type="button" data-mode="easy">简单任务</button>
+              <button type="button" data-mode="hard">困难任务</button>
+              <button type="button" data-mode="customize">自定义任务</button>
+            </div>
+          </div>
+          <button class="action-btn" id="shuffleBtn" type="button">
+            <span class="btn-icon" aria-hidden="true">↻</span>
+            <span>洗牌</span>
+          </button>
+          <button class="action-btn" id="rerollBtn" type="button">
+            <span class="btn-icon" aria-hidden="true">◎</span>
+            <span>随机任务</span>
+          </button>
+        </section>
+      </main>
+    </div>
+
+    <div class="custom-modal hidden" id="customModal" role="dialog" aria-modal="true" aria-labelledby="customModalTitle">
+      <div class="custom-modal-card">
+        <div class="modal-head">
+          <div>
+            <p class="modal-eyebrow">任务池编辑</p>
+            <h2 id="customModalTitle">自定义任务</h2>
+          </div>
+          <button class="icon-btn" id="closeModalBtn" type="button" aria-label="关闭">×</button>
+        </div>
+
+        <p class="modal-note">按步骤选择任务池、美德和操作方式。你可以新增、替换，也可以删除已有任务。</p>
+
+        <div class="wizard-steps" id="wizardSteps">
+          <span class="wizard-step active" data-step="1">1 任务池</span>
+          <span class="wizard-step" data-step="2">2 美德</span>
+          <span class="wizard-step" data-step="3">3 操作</span>
+          <span class="wizard-step" data-step="4">4 内容</span>
+        </div>
+
+        <div class="wizard-body">
+          <section class="wizard-panel" data-panel="1">
+            <div class="choice-grid" id="difficultyChoices"></div>
+          </section>
+
+          <section class="wizard-panel hidden" data-panel="2">
+            <div class="choice-grid virtue-grid" id="virtueChoices"></div>
+          </section>
+
+          <section class="wizard-panel hidden" data-panel="3">
+            <div class="choice-grid" id="actionChoices">
+              <button type="button" class="choice-card" data-action="add">
+                <strong>新增任务</strong>
+                <span>把新任务加入当前任务池</span>
+              </button>
+              <button type="button" class="choice-card" data-action="replace">
+                <strong>替换任务</strong>
+                <span>替换这个美德下的一条现有任务</span>
+              </button>
+              <button type="button" class="choice-card" data-action="delete">
+                <strong>删除任务</strong>
+                <span>删除这个美德下的一条现有任务</span>
+              </button>
+            </div>
+          </section>
+
+          <section class="wizard-panel hidden" data-panel="4">
+            <label class="field hidden" id="targetTaskField">
+              <span id="targetTaskLabel">选择任务</span>
+              <select id="targetTaskSelect"></select>
+            </label>
+
+            <label class="field field-full" id="customTaskInputField">
+              <span>任务内容</span>
+              <textarea id="customTaskInput" spellcheck="false" placeholder="例如：今天晚饭后不再吃零食"></textarea>
+            </label>
+          </section>
+        </div>
+
+        <div class="modal-actions">
+          <button class="secondary-btn" id="backStepBtn" type="button">上一步</button>
+          <button class="secondary-btn" id="addAnotherBtn" type="button">添加下一条</button>
+          <button class="primary-btn" id="saveCustomBtn" type="button">完成</button>
+        </div>
+      </div>
+    </div>
+
+    <canvas id="fireworksCanvas"></canvas>
+    <div class="bingo-overlay hidden" id="bingoOverlay" aria-live="assertive">
+      <div class="bingo-badge">
+        <span class="bingo-subtitle">富兰克林十三美德</span>
+        <strong>BINGO!</strong>
+        <span class="bingo-note">你完成了一条美德连线</span>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
