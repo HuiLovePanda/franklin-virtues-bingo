@@ -14,6 +14,119 @@ const virtues = [
   "谦逊",
 ];
 
+const franklinFacts = [
+  { text: "他于 1706 年出生在波士顿。" },
+  { text: "他于 1790 年在费城去世。" },
+  { text: "他来自一个有 17 个孩子的大家庭。" },
+  { text: "他小时候在父亲的肥皂和蜡烛作坊附近长大。" },
+  { text: "他大约 10 岁后就离开学校，主要靠自学成长。" },
+  { text: "他 12 岁开始做印刷学徒。" },
+  { text: "他年轻时靠大量阅读练成写作能力。" },
+  { text: "他 16 岁时曾用 “Silence Dogood” 的笔名写文章。" },
+  { text: "他年轻时离开波士顿，去了费城发展。" },
+  { text: "他曾在伦敦做过印刷工。" },
+  { text: "他在 1729 年买下《宾夕法尼亚公报》。" },
+  { text: "他创办的《穷理查年鉴》从 1732 年出版多年。" },
+  { text: "他留下了许多关于勤勉、节俭和自律的格言。" },
+  { text: "他在 1727 年创建了 Junto 讨论社团。" },
+  { text: "他常把读书、讨论和公共行动结合起来。" },
+  { text: "他在 1731 年帮助建立了费城图书馆公司。" },
+  { text: "他帮助推动了美国早期公共图书馆文化。" },
+  { text: "他帮助建立了费城的志愿消防组织。" },
+  { text: "他也推动过早期火灾保险制度的发展。" },
+  { text: "他在 1737 年被任命为费城邮政局长。" },
+  { text: "他在 1753 年成为北美联合副邮政总长。" },
+  { text: "他在 1775 年成为联合殖民地第一任邮政总长。" },
+  { text: "他非常重视邮路效率和公共通信网络。" },
+  { text: "他参与创建的教育机构后来发展成宾夕法尼亚大学。" },
+  { text: "他也参与推动了费城医院的建立。" },
+  { text: "他在 1743 年提出建立美国哲学学会。" },
+  { text: "他在 1748 年基本退出印刷业，把重心转向科学和公共事务。" },
+  { text: "他的电学研究后来出版成书并广泛传播。" },
+  { text: "他最有名的科学形象之一，是风筝实验。" },
+  { text: "他的风筝实验通常被追溯到 1752 年。" },
+  { text: "他的风筝实验帮助证明闪电与电现象有关。" },
+  { text: "他的风筝实验并不是“被雷直接劈中”的故事版本。" },
+  { text: "他发明了避雷针。" },
+  { text: "他的避雷针帮助建筑物减少雷击风险。" },
+  { text: "他发明了双焦眼镜。" },
+  { text: "他设计双焦眼镜，是为了看远看近都更方便。" },
+  { text: "他发明了富兰克林炉。" },
+  { text: "他设计的炉子比普通壁炉更节能。" },
+  { text: "他还发明了玻璃琴（glass armonica）。" },
+  { text: "他设计的玻璃琴在 18 世纪很受欢迎。" },
+  { text: "他还为家人设计过柔性导尿管。" },
+  { text: "他少年时做过类似游泳手蹼的小发明。" },
+  { text: "他本人非常喜欢游泳。" },
+  { text: "他没有为很多发明申请专利。" },
+  { text: "他认为有用的发明应该让更多人受益。" },
+  { text: "他推广了不少今天仍常见的电学术语。" },
+  { text: "他帮助普及了“正电”和“负电”的表达方式。" },
+  { text: "他在电学上的成就为后来的研究打下基础。" },
+  { text: "他在 1753 年获得英国皇家学会科普利奖章。" },
+  { text: "他也研究过海流，常被联系到“湾流”研究。" },
+  { text: "他在 1754 年参加了 Albany Congress。" },
+  { text: "他曾提出殖民地联合的设想。" },
+  { text: "他画过著名的 “Join, or Die” 政治图像。" },
+  { text: "他的 “Join, or Die” 常被视为美国早期重要政治漫画。" },
+  { text: "他曾长期在伦敦担任殖民地代理人。" },
+  { text: "他并不是一开始就主张北美独立。" },
+  { text: "他后来反对《印花税法》。" },
+  { text: "他在 1775 年当选第二届大陆会议代表。" },
+  { text: "他在 1776 年进入《独立宣言》起草委员会。" },
+  { text: "他是《独立宣言》的签署者之一。" },
+  { text: "他在 1776 年底前往法国争取支持。" },
+  { text: "他在法国非常受欢迎，成为美国革命的代表人物。" },
+  { text: "他帮助美国争取到法国的贷款和军事支持。" },
+  { text: "他在 1778 年签署了与法国的条约。" },
+  { text: "他后来成为美国驻法全权代表。" },
+  { text: "他参与了对英和约谈判。" },
+  { text: "他在 1783 年签署了《巴黎和约》。" },
+  { text: "他在 1787 年参加了美国制宪会议。" },
+  { text: "他是美国宪法签署者之一。" },
+  { text: "他在 1790 年签署了反奴隶制请愿书。" },
+  {
+    text: "名言：诚实是最好的策略。",
+    english: "Honesty is the best policy.",
+  },
+  {
+    text: "名言：说得好，不如做得好。",
+    english: "Well done is better than well said.",
+  },
+  {
+    text: "名言：你若爱惜生命，就别浪费时间。",
+    english: "Dost thou love life? Then do not squander Time; for that's the Stuff Life is made of.",
+  },
+  {
+    text: "名言：失去的时间，再也找不回来。",
+    english: "Lost Time is never found again.",
+  },
+  {
+    text: "名言：无痛苦，便无收获。",
+    english: "No gains without pains.",
+  },
+  {
+    text: "名言：先看前方，不然你会发现自己落在后面。",
+    english: "Look before, or you'll find yourself behind.",
+  },
+  {
+    text: "名言：不要拿石头砸邻居，若你自家的窗户也是玻璃做的。",
+    english: "Don't throw stones at your neighbors, if your own windows are glass.",
+  },
+  {
+    text: "名言：真正的朋友，是最好的财富。",
+    english: "A true Friend is the best Possession.",
+  },
+  {
+    text: "名言：把时间藏起来没有意义，天赋也是如此。",
+    english: "Hide not your Talents, they for Use were made. What's a Sun-Dial in the shade!",
+  },
+  {
+    text: "名言：与人为善，其实也是对自己最好。",
+    english: "When you're good to others, you're best to yourself.",
+  },
+];
+
 const basePools = {
   easy: [
     { id: "easy-1", virtue: "节制", label: "节制：每餐七分饱" },
@@ -117,6 +230,8 @@ const closeModalBtn = document.getElementById("closeModalBtn");
 const canvas = document.getElementById("fireworksCanvas");
 const ctx = canvas.getContext("2d");
 const bingoOverlayEl = document.getElementById("bingoOverlay");
+const factTextEl = document.getElementById("factText");
+const factEnglishEl = document.getElementById("factEnglish");
 
 const wizardState = {
   step: 1,
@@ -124,6 +239,8 @@ const wizardState = {
   virtue: virtues[0],
   action: "add",
 };
+
+let lastFactIndex = -1;
 
 function clonePool(mode) {
   return basePools[mode].map((task) => ({ ...task }));
@@ -623,11 +740,32 @@ function createBurst(x, y) {
 }
 
 function showBingoOverlay() {
+  const fact = getRandomFranklinFact();
+  factTextEl.textContent = fact.text;
+  if (fact.english) {
+    factEnglishEl.textContent = fact.english;
+    factEnglishEl.classList.remove("hidden");
+  } else {
+    factEnglishEl.textContent = "";
+    factEnglishEl.classList.add("hidden");
+  }
+
   bingoOverlayEl.classList.remove("hidden");
   window.clearTimeout(showBingoOverlay.timeoutId);
   showBingoOverlay.timeoutId = window.setTimeout(() => {
     bingoOverlayEl.classList.add("hidden");
-  }, 1500);
+  }, 3800);
+}
+
+function getRandomFranklinFact() {
+  if (franklinFacts.length === 1) return franklinFacts[0];
+
+  let index = Math.floor(Math.random() * franklinFacts.length);
+  while (index === lastFactIndex) {
+    index = Math.floor(Math.random() * franklinFacts.length);
+  }
+  lastFactIndex = index;
+  return franklinFacts[index];
 }
 
 taskManagerBtn.addEventListener("click", openTaskMenu);

@@ -571,6 +571,41 @@ textarea {
   font-size: 15px;
 }
 
+.fact-card {
+  margin-top: 14px;
+  padding: 14px 16px;
+  border-radius: 20px;
+  background: rgba(237, 243, 248, 0.9);
+  text-align: left;
+}
+
+.fact-title {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+}
+
+.fact-text,
+.fact-english {
+  margin: 0;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.fact-text {
+  font-size: 15px;
+}
+
+.fact-english {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--muted);
+  font-style: italic;
+}
+
 @keyframes bingo-pop {
   0% {
     opacity: 0;
