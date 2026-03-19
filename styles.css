@@ -463,6 +463,7 @@ textarea {
 }
 
 .bingo-badge {
+  position: relative;
   min-width: min(82vw, 360px);
   padding: 22px 28px;
   border-radius: 28px;
@@ -472,6 +473,21 @@ textarea {
   backdrop-filter: blur(10px);
   text-align: center;
   animation: bingo-pop 1.5s ease forwards;
+}
+
+.bingo-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(237, 243, 248, 0.95);
+  color: var(--accent-deep);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
 }
 
 .bingo-subtitle,

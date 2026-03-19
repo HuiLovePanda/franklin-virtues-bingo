@@ -230,6 +230,7 @@ const closeModalBtn = document.getElementById("closeModalBtn");
 const canvas = document.getElementById("fireworksCanvas");
 const ctx = canvas.getContext("2d");
 const bingoOverlayEl = document.getElementById("bingoOverlay");
+const closeBingoOverlayBtn = document.getElementById("closeBingoOverlayBtn");
 const factTextEl = document.getElementById("factText");
 const factEnglishEl = document.getElementById("factEnglish");
 
@@ -753,7 +754,7 @@ function showBingoOverlay() {
   bingoOverlayEl.classList.remove("hidden");
   window.clearTimeout(showBingoOverlay.timeoutId);
   showBingoOverlay.timeoutId = window.setTimeout(() => {
-    bingoOverlayEl.classList.add("hidden");
+    hideBingoOverlay();
   }, 3800);
 }
 
@@ -766,6 +767,11 @@ function getRandomFranklinFact() {
   }
   lastFactIndex = index;
   return franklinFacts[index];
+}
+
+function hideBingoOverlay() {
+  window.clearTimeout(showBingoOverlay.timeoutId);
+  bingoOverlayEl.classList.add("hidden");
 }
 
 taskManagerBtn.addEventListener("click", openTaskMenu);
@@ -826,6 +832,7 @@ addAnotherBtn.addEventListener("click", () => {
 });
 
 closeModalBtn.addEventListener("click", closeCustomModal);
+closeBingoOverlayBtn.addEventListener("click", hideBingoOverlay);
 customModalEl.addEventListener("click", (event) => {
   if (event.target === customModalEl) closeCustomModal();
 });
