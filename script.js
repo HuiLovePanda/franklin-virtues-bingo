@@ -752,10 +752,6 @@ function showBingoOverlay() {
   }
 
   bingoOverlayEl.classList.remove("hidden");
-  window.clearTimeout(showBingoOverlay.timeoutId);
-  showBingoOverlay.timeoutId = window.setTimeout(() => {
-    hideBingoOverlay();
-  }, 3800);
 }
 
 function getRandomFranklinFact() {
@@ -770,7 +766,6 @@ function getRandomFranklinFact() {
 }
 
 function hideBingoOverlay() {
-  window.clearTimeout(showBingoOverlay.timeoutId);
   bingoOverlayEl.classList.add("hidden");
 }
 
