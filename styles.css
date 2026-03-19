@@ -464,6 +464,7 @@ textarea {
 
 .bingo-badge {
   position: relative;
+  pointer-events: auto;
   min-width: min(82vw, 360px);
   padding: 22px 28px;
   border-radius: 28px;
@@ -622,6 +623,7 @@ textarea {
   position: absolute;
   top: 10px;
   right: 10px;
+  pointer-events: auto;
   width: 34px;
   height: 34px;
   border: 0;
